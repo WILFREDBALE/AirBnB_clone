@@ -1,125 +1,145 @@
-# AirBnB clone - The console
 
-This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
+# The AirBnB Clone Project
 
-# Repository Contents by Project Task
-| Tasks                         | Files                                    | Description                              |
-|-------------------------------|------------------------------------------|------------------------------------------|
-| 0: Authors/README File        | <a href="https://github.com/yonasleykun27/AirBnB_clone_v2/blob/master/yonasleykun27@gmail.com" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">AUTHORS</a> |                                          |
-| 1: Pep8                       | N/A                                      | All code is pep8 compliant               |
-| 2: Unit Testing               | <a href="https://github.com/justinmajetich/AirBnB_clone/tree/dev/tests" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/tests</a> | All class-defining modules are unittested |
-| 3. Make BaseModel             | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/base_model.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/base_model.py</a> | Defines a parent class to be inherited by all model classes |
-| 4. Update BaseModel w/ kwargs | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/base_model.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/base_model.py</a> | Add functionality to recreate an instance of a class from a dictionary representation |
-| 5. Create FileStorage class   | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/engine/file_storage.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/engine/file_storage.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/__init__.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/_<span> </span><em style="box-sizing: border-box;">init</em><span> </span>_.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/base_model.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/base_model.py</a> | Defines a class to manage persistent file storage system |
-| 6. Console 0.0.1              | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/console.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">console.py</a> | Add basic functionality to console program, allowing it to quit, handle empty lines and ^D |
-| 7. Console 0.1                | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/console.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">console.py</a> | Update the console with methods allowing the user to create, destroy, show, and update stored data |
-| 8. Create User class          | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/console.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">console.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/engine/file_storage.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/engine/file_storage.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/user.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/user.py</a> | Dynamically implements a user class      |
-| 9. More Classes               | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/user.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/user.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/place.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/place.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/city.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/city.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/amenity.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/amenity.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/state.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/state.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/review.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/review.py</a> | Dynamically implements more classes      |
-| 10. Console 1.0               | <a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/console.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">console.py</a><span> </span><a href="https://github.com/justinmajetich/AirBnB_clone/blob/dev/models/engine/file_storage.py" style="box-sizing: border-box; background-color: transparent; color: var(--color-accent-fg); text-decoration: none;">/models/engine/file_storage.py</a> | Update the console and file storage system to work dynamically with all classes update file storage |
+![](anb.png)
+
+# Project Description
+This is the first part of the AirBnB clone project where we worked on the backend of the project whiles interfacing it with a console application with the help of the cmd module in python.
+
+Data (python objects) generated are stored in a json file and can be accessed with the help of the json module in python
+
+# Description of the command interpreter:
+
+The interface of the application is just like the Bash shell except that this has a limited number of accepted commands that were solely defined for the purposes of the usage of the AirBnB website.
+
+This command line interpreter serves as the frontend of the web app where users can interact with the backend which was developed with python OOP programming.
+
+Some of the commands available are:
+
+show
+create
+update
+destroy
+count
+And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed:
+
+Creating new objects (ex: a new User or a new Place)
+Retrieving an object from a file, a database etc…
+Doing operations on objects (count, compute stats, etc…)
+Updating attributes of an object
+Destroying an object
+
+# How to start it
+These instructions will get you a copy of the project up and running on your local machine (Linux distro) for development and testing purposes.
 
 
-# General Use
-1. First clone this repository.
 
-2. Once the repository is cloned locate the "console.py" file and run it as follows:
+# Installing
+You will need to clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
+http://github.com/WILFREDBALE/AirBnB_clone.git
 
-/AirBnB_clone$ ./console.py
+After cloning the repository you will have a folder called AirBnB_clone. In here there will be several files that allow the program to work.
 
-3. When this command is run the following prompt should appear:
+/console.py : The main executable of the project, the command interpreter.
+
+models/engine/file_storage.py: Class that serializes instances to a JSON file and deserializes JSON file to instances
+
+models/__ init __.py: A unique FileStorage instance for the application
+
+models/base_model.py: Class that defines all common attributes/methods for other classes.
+
+models/user.py: User class that inherits from BaseModel
+
+models/state.py: State class that inherits from BaseModel
+
+models/city.py: City class that inherits from BaseModel
+
+models/amenity.py: Amenity class that inherits from BaseModel
+
+models/place.py: Place class that inherits from BaseModel
+
+models/review.py: Review class that inherits from BaseModel
+
+# How to use it
+It can work in two different modes:
+
+Interactive and Non-interactive.
+
+In Interactive mode, the console will display a prompt (hbnb) indicating that the user can write and execute a command. After the command is run, the prompt will appear again a wait for a new command. This can go indefinitely as long as the user does not exit the program.
+
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+
+In Non-interactive mode, the shell will need to be run with a command input piped into its execution so that the command is run as soon as the Shell starts. In this mode no prompt will appear, and no further input will be expected from the user.
+
+$ echo "help" | ./console.py
 (hbnb)
 
-4. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
-
-# Commands
-* create - Creates an instance based on given class
-
-* destroy - Destroys an object based on class and UUID
-
-* show - Shows an object based on class and UUID
-
-* all - Shows all objects the program has access to, or all objects of a given class
-
-* update - Updates existing attributes an object based on class name and UUID
-
-* quit - Exits the program (EOF will as well)
-
-# Alternative Syntax
-Users are able to issue a number of console command using an alternative syntax:
-Usage: <class_name>.<command>([<id>[name_arg value_arg]|[kwargs]])
-
-# Advanced syntax is implemented for the following commands:
-* all - Shows all objects the program has access to, or all objects of a given class
-
-* count - Return number of object instances by class
-
-* show - Shows an object based on class and UUID
-
-* destroy - Destroys an object based on class and UUID
-
-* update - Updates existing attributes an object based on class name and UUID
-
-# Examples
-# Primary Command Syntax
-# Example 0: Create an object
-Usage: create <class_name>
-(hbnb) create BaseModel
-
-(hbnb) create BaseModel
-3aa5babc-efb6-4041-bfe9-3cc9727588f8
-(hbnb)                   
-
-# Example 1: Show an object
-(hbnb) show BaseModel 3aa5babc-efb6-4041-bfe9-3cc9727588f8
-[BaseModel] (3aa5babc-efb6-4041-bfe9-3cc9727588f8) {'id': '3aa5babc-efb6-4041-bfe9-3cc9727588f8', 'created_at': datetime.datetime(2020, 2, 18, 14, 21, 12, 96959), 
-'updated_at': datetime.datetime(2020, 2, 18, 14, 21, 12, 96971)}
-(hbnb)  
-
-
-# Example 2: Destroy an object
-Usage: destroy <class_name> <_id>
-(hbnb) destroy BaseModel 3aa5babc-efb6-4041-bfe9-3cc9727588f8
-(hbnb) show BaseModel 3aa5babc-efb6-4041-bfe9-3cc9727588f8
-** no instance found **
-(hbnb)   
-
-# Example 3: Update an object
-Usage: update <class_name> <_id>
-(hbnb) update BaseModel b405fc64-9724-498f-b405-e4071c3d857f first_name "person"
-(hbnb) show BaseModel b405fc64-9724-498f-b405-e4071c3d857f
-[BaseModel] (b405fc64-9724-498f-b405-e4071c3d857f) {'id': 'b405fc64-9724-498f-b405-e4071c3d857f', 'created_at': datetime.datetime(2020, 2, 18, 14, 33, 45, 729889), 
-'updated_at': datetime.datetime(2020, 2, 18, 14, 33, 45, 729907), 'first_name': 'person'}
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
 (hbnb)
 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
 
-# Alternative Syntax
-Example 0: Show all User objects
-Usage: <class_name>.all()
-(hbnb) User.all()
-["[User] (99f45908-1d17-46d1-9dd2-b7571128115b) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 34, 92071), 'id': '99f45908-1d17-46d1-9dd2-b7571128115b', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 34, 92056)}", "[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
+# Format of Command Input
+In order to give commands to the console, these will need to be piped through an echo in case of Non-interactive mode.
 
+In Interactive Mode the commands will need to be written with a keyboard when the prompt appears and will be recognized when an enter key is pressed (new line). As soon as this happens, the console will attempt to execute the command through several means or will show an error message if the command didn't run successfully. In this mode, the console can be exited using the CTRL + D combination, CTRL + C, or the command quit or EOF.
 
-
-# Example 1: Destroy a User
-Usage: <class_name>.destroy(<_id>)
-(hbnb) User.destroy("99f45908-1d17-46d1-9dd2-b7571128115b")
-(hbnb)
-(hbnb) User.all()
-(hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
-
-# Example 2: Update User (by attribute)
-Usage: <class_name>.update(<_id>, <attribute_name>, <attribute_value>)
-(hbnb) User.update("98bea5de-9cb0-4d78-8a9d-c4de03521c30", name "Todd the Toad")
-(hbnb)
-(hbnb) User.all()
-(hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'name': 'Todd the Toad', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
+# Arguments
+Most commands have several options or arguments that can be used when executing the program. In order for the Shell to recognize those parameters, the user must separate everything with spaces.
 
 
 
-# Example 3: Update User (by dictionary)
-Usage: <class_name>.update(<_id>, )
-(hbnb) User.update("98bea5de-9cb0-4d78-8a9d-c4de03521c30", {'name': 'Fred the Frog', 'age': 9})
-(hbnb)
-(hbnb) User.all()
-(hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
+
+# Available commands and what they do
+The recognizable commands by the interpreter are the following:
+| Command                                  | Description                              |
+|------------------------------------------|------------------------------------------|
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">quit or EOF</strong> | Exits the program                        |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | By itself                                |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">help</strong> | Provides a text describing how to use a command. |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | By itself --or--<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">help &lt;command&gt;</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">create</strong> | Creates a new instance of a valid<span> </span><code style="box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; white-space: break-spaces; background-color: var(--color-neutral-muted); border-radius: 6px;">Class</code>, saves it (to the JSON file) and prints the<span> </span><code style="box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; white-space: break-spaces; background-color: var(--color-neutral-muted); border-radius: 6px;">id</code>. Valid classes are: BaseModel, User, State, City, Amenity, Place, Review. |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">create &lt;class name&gt;</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">show</strong> | Prints the string representation of an instance based on the class name and<span> </span><code style="box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; white-space: break-spaces; background-color: var(--color-neutral-muted); border-radius: 6px;">id</code> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">show &lt;class name&gt; &lt;id&gt;</strong><span> </span>--or--<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">&lt;class name&gt;.show(&lt;id&gt;)</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">destroy</strong> | Deletes an instance based on the class name and<span> </span><code style="box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; white-space: break-spaces; background-color: var(--color-neutral-muted); border-radius: 6px;">id</code><span> </span>(saves the change into a JSON file). |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">destroy &lt;class name&gt; &lt;id&gt;</strong><span> </span>--or--<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">.destroy()</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">all</strong> | Prints all string representation of all instances based or not on the class name. |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | By itself or<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">all &lt;class name&gt;</strong><span> </span>--or--<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">&lt;class name&gt;.all()</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">update</strong> | Updates an instance based on the class name and<span> </span><code style="box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; padding: 0.2em 0.4em; margin: 0px; white-space: break-spaces; background-color: var(--color-neutral-muted); border-radius: 6px;">id</code><span> </span>by adding or updating attribute (saves the changes into a JSON file). |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">update &lt;class name&gt; &lt;id&gt; &lt;attribute name&gt; "&lt;attribute value&gt;"</strong><span> </span>---or---<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">&lt;class name&gt;.update(&lt;id&gt;, &lt;attribute name&gt;, &lt;attribute value&gt;)</strong><span> </span>--or--<span> </span><strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">&lt;class name&gt;.update(&lt;id&gt;, &lt;dictionary representation&gt;)</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">-----</strong> |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">count</strong> | Retrieve the number of instances of a class. |
+| <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">Usage</strong> | <strong style="box-sizing: border-box; font-weight: var(--base-text-weight-semibold, 600);">&lt;class name&gt;.count()</strong> |
+
+
 # AUTHORS
 WILFRED BALE & BELLO AUGUSTINE
