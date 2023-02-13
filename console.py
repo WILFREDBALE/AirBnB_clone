@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/python3
 """Module for the entry point of the command interpreter."""
 
@@ -218,33 +217,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-=======
-#!/usr/bin/env python3
-"""
-This module defines the HBNBCommand class that implements a command interpreter.
-"""
-
-import cmd
-
-class HBNBCommand(cmd.Cmd):
-    """Command interpreter class."""
-
-    prompt = "(hbnb) "
-
-    def do_quit(self, arg):
-        """Quit command to exit the program"""
-        return True
-
-    def do_EOF(self, arg):
-        """EOF command to exit the program"""
-        print()
-        return True
-
-    def emptyline(self):
-        """Do nothing on empty input line"""
-        pass
-
-if __name__ == '__main__':
-    HBNBCommand().cmdloop()
-
->>>>>>> 3ec81b3a7f6de61592981168ebe78e5ed6606b8d
