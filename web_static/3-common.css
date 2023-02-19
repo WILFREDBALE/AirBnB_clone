@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #484848;
+}
+
+/* Add an icon to the browser tab */
+/* Replace favicon.png with your own icon file */
+/* Place the icon file in the images folder */
+/* The icon file should be 32x32 pixels */
+/* The file type can be .png, .ico, or .gif */
+/* Only use one of the following lines, depending on the file type */
+/* <link rel="icon" type="image/png" href="images/favicon.png"> */
+/* <link rel="icon" type="image/x-icon" href="images/favicon.ico"> */
+/* <link rel="icon" type="image/gif" href="images/favicon.gif"> */
